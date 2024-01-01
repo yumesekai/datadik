@@ -1,0 +1,64 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    image: datadik
+    container_name: datadik
+    restart: unless-stopped
+    tty: true
+    environment:
+        SERVICE_NAME: app
+    working_dir: /var/www/datadik
+    volumes:
+      - .:/var/www/datadik
+      - ./storage/php.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - datadik
+
+  webserver:
+    image: nginx:alpine
+    container_name: nginxdatadik
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8090:80"
+    volumes:
+      - .:/var/www/datadik
+      - ./storage/:/etc/nginx/conf.d/
+    networks:
+      - datadik
+
+  db:
+    image: mysql:5.7
+    container_name: dbdatadik
+    restart: always
+    tty: true
+    ports:
+      - "3390:3306"
+    volumes:
+      - lbdata:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD: datadik
+      - MYSQL_PASSWORD: datadik
+      - SERVICE_TAGS: dev
+      - SERVICE_NAME: mysql
+    networks:
+      - datadik
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: pmadatadik
+    link:
+      - db
+    restart: always
+    ports:
+      - 7000:80
+    networks:
+      - datadik
+networks:
+  datadiik:
+    driver: bridge
+volumes:
+  lbdata:
+    driver: local
