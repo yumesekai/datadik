@@ -15,9 +15,18 @@ class Kepsek
      */
     public function handle($request, Closure $next)
     {
-        if ($request->user()->role != 'Kepsek') {
-            return redirect('/');
-        }
-        return $next($request);
-    }
+        //if ($request->user()->role != 'Kepsek') {
+        //    return redirect('/');
+        //}
+        //return $next($request);
+
+	$user = \App\Uuser::where('email', $request->email)->first();
+	if ($user->role == 'admin'){
+	   return redirect('admin/index')
+	}elseif ($user->role == 'guru'){
+	   return redirect('guru/index')
+    	}elseif ($user->role == 'siswa'){
+	   return redirect('siswa/index')
+	}
+	return $next($request);
 }

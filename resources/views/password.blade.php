@@ -1,7 +1,7 @@
 @extends('template_backend.home')
 @section('heading', 'Ubah Password')
 @section('page')
-  <li class="breadcrumb-item active"><a href="{{ route('profile') }}">Pengaturan</a></li>
+  <li class="breadcrumb-item active"><a>Pengaturan</a></li>
   <li class="breadcrumb-item active">Ubah Password</li>
 @endsection
 @section('content')

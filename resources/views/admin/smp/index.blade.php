@@ -37,19 +37,20 @@
                         <td>{{ $data->status }}</td>
                         <td>
                             @if ($data->user->berkas_ijasah == '')
-                            <a><b>Ijasah</a>
+                            <a class="btn btn-dark btn-sm btn-block disabled text-white" role="button" aria-disabled="false">Ijasah</a>
                             @else
-                            <a href="{{ asset($data->user->berkas_ijasah) }}" target="_blank" rel="noopener noreferrer">
+                            <a class="btn btn-dark btn-sm btn-block text-white" role="button" href="{{ asset($data->user->berkas_ijasah) }}" target="_blank" rel="noopener noreferrer">
                                 Ijasah</a>
                             @endif
+
                         </td>
                         <td>
                             @if(Auth::user()->role == 'Admin' )
                             <form action="{{ route('smp.destroy', $data->id) }}" method="post">
                                 @csrf
                                 @method('delete')
-                                <a href="{{ route('smp.edit', Crypt::encrypt($data->id)) }}" class="btn btn-success btn-sm mt-2"><i class="nav-icon fas fa-edit"></i> &nbsp; Edit</a>
-                                <button onclick="return confirm('Apakah Anda Yakin Menghapus Permanen Data?');" class="btn btn-danger btn-sm mt-2"><i class="nav-icon fas fa-trash-alt"></i> &nbsp; Hapus</button>
+                                <a href="{{ route('smp.edit', Crypt::encrypt($data->id)) }}" class="btn btn-success btn-sm btn-block"><i class="nav-icon fas fa-edit"></i>&nbsp;Edit</a>
+                                <button onclick="return confirm('Apakah Anda Yakin Menghapus Permanen Data?');" class="btn btn-danger btn-sm btn-block"><i class="nav-icon fas fa-trash-alt"></i>&nbsp; Hapus</button>
                             </form>
                             @else
                             <a href="{{ route('smp.edit', Crypt::encrypt($data->id)) }}" class="btn btn-warning btn-sm mt-2"><i class="nav-icon fas fa-eye"></i> &nbsp; Detail Data</a>

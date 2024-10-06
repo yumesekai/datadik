@@ -10,8 +10,8 @@
     <div class="card card-primary">
         <div class="card-header">
             <div class="d-grid gap-2 d-md-flex justify-content-between">
-                <h3 class="card-title">Detail Pengajuan Data Orang Tua</h3>
-                <a href="{{ asset($tem_orangtua->user->berkas_kk) }}" class="btn btn-info" target="_blank" rel="noopener noreferrer"><i class="nav-icon fas fa-image"></i>&nbsp; Berkas Kartu Keluarga</a>
+                <h3 class="card-title">Data Orang Tua <b>{{ $tem_orangtua->user->name }} </b></h3>
+                <a href="{{ asset($tem_orangtua->user->berkas_kk) }}" class="btn btn-warning" target="_blank" rel="noopener noreferrer"><i class="nav-icon fas fa-image"></i>&nbsp; Berkas Kartu Keluarga</a>
             </div>
         </div>
         <!-- /.card-header -->
@@ -68,6 +68,10 @@
                                         selected
                                         @endif
                                         >D3</option>
+                                    <option value="D4" @if ($tem_orangtua->pendidikan_ayah == 'D4')
+                                        selected
+                                        @endif
+                                        >D4</option>
                                     <option value="Paket A" @if ($tem_orangtua->pendidikan_ayah == 'Paket A')
                                         selected
                                         @endif
@@ -96,15 +100,15 @@
                                         selected
                                         @endif
                                         >PAUD</option>
-                                    <option value="SD / Sederajat" @if ($tem_orangtua->pendidikan_ayah == 'SD / Sederajat')
+                                    <option value="SD / sederajat" @if ($tem_orangtua->pendidikan_ayah == 'SD / sederajat')
                                         selected
                                         @endif
                                         >SD / Sederajat</option>
-                                    <option value="SMP / Sederajat" @if ($tem_orangtua->pendidikan_ayah == 'SMP / Sederajat')
+                                    <option value="SMP / sederajat" @if ($tem_orangtua->pendidikan_ayah == 'SMP / sederajat')
                                         selected
                                         @endif
                                         >SMP / Sederajat</option>
-                                    <option value="SMA / Sederajat" @if ($tem_orangtua->pendidikan_ayah == 'SMA / Sederajat')
+                                    <option value="SMA / sederajat" @if ($tem_orangtua->pendidikan_ayah == 'SMA / sederajat')
                                         selected
                                         @endif
                                         >SMA / Sederajat</option>
@@ -112,7 +116,7 @@
                                         selected
                                         @endif
                                         >Putus SD</option>
-                                    <option value="Tidak Sekolah" @if ($tem_orangtua->pendidikan_ayah == 'Tidak Sekolah')
+                                    <option value="Tidak sekolah" @if ($tem_orangtua->pendidikan_ayah == 'Tidak sekolah')
                                         selected
                                         @endif
                                         >Tidak Sekolah</option>
@@ -140,11 +144,11 @@
                                         selected
                                         @endif
                                         >Peternak</option>
-                                    <option value="PNS/PORLI/TNI" @if ($tem_orangtua->pekerjaan_ayah == 'PNS/PORLI/TNI')
+                                    <option value="PNS/TNI/Polri" @if ($tem_orangtua->pekerjaan_ayah == 'PNS/TNI/Polri')
                                         selected
                                         @endif
                                         >PNS/PORLI/TNI</option>
-                                    <option value="Kariyawan Swasta" @if ($tem_orangtua->pekerjaan_ayah == 'Kariyawan Swasta')
+                                    <option value="Karyawan Swasta" @if ($tem_orangtua->pekerjaan_ayah == 'Karyawan Swasta')
                                         selected
                                         @endif
                                         >Kariyawan Swasta</option>
@@ -295,6 +299,10 @@
                                         selected
                                         @endif
                                         >D3</option>
+                                    <option value="D4" @if ($tem_orangtua->pendidikan_ibu == 'D4')
+                                        selected
+                                        @endif
+                                        >D4</option>
                                     <option value="Paket A" @if ($tem_orangtua->pendidikan_ibu == 'Paket A')
                                         selected
                                         @endif
@@ -323,15 +331,15 @@
                                         selected
                                         @endif
                                         >PAUD</option>
-                                    <option value="SD / Sederajat" @if ($tem_orangtua->pendidikan_ibu == 'SD / Sederajat')
+                                    <option value="SD / sederajat" @if ($tem_orangtua->pendidikan_ibu == 'SD / sederajat')
                                         selected
                                         @endif
                                         >SD / Sederajat</option>
-                                    <option value="SMP / Sederajat" @if ($tem_orangtua->pendidikan_ibu == 'SMP / Sederajat')
+                                    <option value="SMP / sederajat" @if ($tem_orangtua->pendidikan_ibu == 'SMP / sederajat')
                                         selected
                                         @endif
                                         >SMP / Sederajat</option>
-                                    <option value="SMA / Sederajat" @if ($tem_orangtua->pendidikan_ibu == 'SMA / Sederajat')
+                                    <option value="SMA / sederajat" @if ($tem_orangtua->pendidikan_ibu == 'SMA / sederajat')
                                         selected
                                         @endif
                                         >SMA / Sederajat</option>
@@ -339,7 +347,7 @@
                                         selected
                                         @endif
                                         >Putus SD</option>
-                                    <option value="Tidak Sekolah" @if ($tem_orangtua->pendidikan_ibu == 'Tidak Sekolah')
+                                    <option value="Tidak sekolah" @if ($tem_orangtua->pendidikan_ibu == 'Tidak sekolah')
                                         selected
                                         @endif
                                         >Tidak Sekolah</option>

@@ -43,26 +43,35 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="kelas">Kelas</label>
-                            <input readonly type="text" id="kelas" name="kelas" value="{{ $priodik->user->kelas }}" class="form-control @error('kelas') is-invalid @enderror">
+                            <input readonly type="text" id="kelas" name="kelas" value="{{ $priodik->user->kelas->nama_kelas }}" class="form-control @error('kelas') is-invalid @enderror">
                         </div>
                     </div>
 
                     <div class="col-md-12">
-                        <div class="form-group">
                             <label for="kelas">Tinggi Badan</label>
+                        <div class="input-group">
                             <input type="text" id="tinggi_badan" name="tinggi_badan" value="{{ $priodik->tinggi_badan }}" class="form-control @error('tinggi_badan') is-invalid @enderror">
+			<div class="input-group-prepend">
+          		    <div class="input-group-text">cm</div>
+        		</div>
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <div class="form-group">
                             <label for="kelas">Berat Badan</label>
+                        <div class="input-group">
                             <input type="text" id="berat_badan" name="berat_badan" value="{{ $priodik->berat_badan }}" class="form-control @error('berat_badan') is-invalid @enderror">
+			<div class="input-group-prepend">
+          			<div class="input-group-text">kg</div>
+        		</div>
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <div class="form-group">
                             <label for="kelas">Jarak Sekolah</label>
+                        <div class="input-group">
                             <input type="text" id="jarak_sekolah" name="jarak_sekolah" value="{{ $priodik->jarak_sekolah }}" class="form-control @error('jarak_sekolah') is-invalid @enderror">
+			<div class="input-group-prepend">
+          		    <div class="input-group-text">Meter</div>
+        		</div>
                         </div>
                     </div>
                     <div class="col-md-12">

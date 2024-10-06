@@ -33,6 +33,13 @@ class User extends Authenticatable
     //     return $siswa;
     // }
 
+    public function laporan($id)
+    {
+        $laporan = LaporanEkskul::where('user_id', $id)->first();
+        return $laporan;
+    }
+
+
     public function kelas()
     {
         return $this->belongsTo('App\Kelas')->withDefault();

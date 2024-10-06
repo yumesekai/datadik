@@ -36,6 +36,7 @@ class EkstraExport implements
             'Pilihan 1',
             'Pilihan 2',
             'pilihan 3',
+	    'Nomer HP',
         ];
     }
 
@@ -78,6 +79,7 @@ class EkstraExport implements
             $Ekstrakulikuler->pilihan_1,
             $Ekstrakulikuler->pilihan_2,
             $Ekstrakulikuler->pilihan_3,
+	    $Ekstrakulikuler->no_hp,
         ];
     }
 

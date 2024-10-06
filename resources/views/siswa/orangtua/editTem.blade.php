@@ -75,6 +75,10 @@
                                     selected
                                     @endif
                                     >D3</option>
+                                <option value="D4" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_ayah == 'D4')
+                                    selected
+                                    @endif
+                                    >D4</option>
                                 <option value="Paket A" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_ayah == 'Paket A')
                                     selected
                                     @endif
@@ -103,23 +107,23 @@
                                     selected
                                     @endif
                                     >PAUD</option>
-                                <option value="SD / Sederajat" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_ayah == 'SD / Sederajat')
+                                <option value="SD / sederajat" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_ayah == 'SD / sederajat')
                                     selected
                                     @endif
-                                    >SD / Sederajat</option>
-                                <option value="SMP / Sederajat" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_ayah == 'SMP / Sederajat')
+                                    >SD / sederajat</option>
+                                <option value="SMP / sederajat" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_ayah == 'SMP / sederajat')
                                     selected
                                     @endif
-                                    >SMP / Sederajat</option>
-                                <option value="SMA / Sederajat" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_ayah == 'SMA / Sederajat')
+                                    >SMP / sederajat</option>
+                                <option value="SMA / sederajat" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_ayah == 'SMA / sederajat')
                                     selected
                                     @endif
-                                    >SMA / Sederajat</option>
+                                    >SMA / sederajat</option>
                                 <option value="Putus SD" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_ayah == 'Putus SD')
                                     selected
                                     @endif
                                     >Putus SD</option>
-                                <option value="Tidak Sekolah" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_ayah == 'Tidak Sekolah')
+                                <option value="Tidak sekolah" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_ayah == 'Tidak sekolah')
                                     selected
                                     @endif
                                     >Tidak Sekolah</option>
@@ -147,14 +151,14 @@
                                     selected
                                     @endif
                                     >Peternak</option>
-                                <option value="PNS/PORLI/TNI" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pekerjaan_ayah == 'PNS/PORLI/TNI')
+                                <option value="PNS/TNI/Polri" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pekerjaan_ayah == 'PNS/TNI/Polri')
                                     selected
                                     @endif
-                                    >PNS/PORLI/TNI</option>
-                                <option value="Kariyawan Swasta" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pekerjaan_ayah == 'Kariyawan Swasta')
+                                    >PNS/TNI/Polri</option>
+                                <option value="Karyawan Swasta" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pekerjaan_ayah == 'Karyawan Swasta')
                                     selected
                                     @endif
-                                    >Kariyawan Swasta</option>
+                                    >Karyawan Swasta</option>
                                 <option value="Pedagang Kecil" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pekerjaan_ayah == 'Pedagang Kecil')
                                     selected
                                     @endif
@@ -302,6 +306,10 @@
                                     selected
                                     @endif
                                     >D3</option>
+                                <option value="D4" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_ibu == 'D4')
+                                    selected
+                                    @endif
+                                    >D4</option>
                                 <option value="Paket A" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_ibu == 'Paket A')
                                     selected
                                     @endif
@@ -330,23 +338,23 @@
                                     selected
                                     @endif
                                     >PAUD</option>
-                                <option value="SD / Sederajat" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_ibu == 'SD / Sederajat')
+                                <option value="SD / sederajat" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_ibu == 'SD / sederajat')
                                     selected
                                     @endif
-                                    >SD / Sederajat</option>
-                                <option value="SMP / Sederajat" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_ibu == 'SMP / Sederajat')
+                                    >SD / sederajat</option>
+                                <option value="SMP / sederajat" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_ibu == 'SMP / sederajat')
                                     selected
                                     @endif
-                                    >SMP / Sederajat</option>
-                                <option value="SMA / Sederajat" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_ibu == 'SMA / Sederajat')
+                                    >SMP / sederajat</option>
+                                <option value="SMA / sederajat" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_ibu == 'SMA / sederajat')
                                     selected
                                     @endif
-                                    >SMA / Sederajat</option>
+                                    >SMA / sederajat</option>
                                 <option value="Putus SD" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_ibu == 'Putus SD')
                                     selected
                                     @endif
                                     >Putus SD</option>
-                                <option value="Tidak Sekolah" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_ibu == 'Tidak Sekolah')
+                                <option value="Tidak sekolah" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_ibu == 'Tidak sekolah')
                                     selected
                                     @endif
                                     >Tidak Sekolah</option>
@@ -374,14 +382,14 @@
                                     selected
                                     @endif
                                     >Peternak</option>
-                                <option value="PNS/PORLI/TNI" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pekerjaan_ibu == 'PNS/PORLI/TNI')
+                                <option value="PNS/TNI/Polri" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pekerjaan_ibu == 'PNS/TNI/Polri')
                                     selected
                                     @endif
-                                    >PNS/PORLI/TNI</option>
-                                <option value="Kariyawan Swasta" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pekerjaan_ibu == 'Kariyawan Swasta')
+                                    >PNS/TNI/Polri</option>
+                                <option value="Karyawan Swasta" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pekerjaan_ibu == 'Karyawan Swasta')
                                     selected
                                     @endif
-                                    >Kariyawan Swasta</option>
+                                    >Karyawan Swasta</option>
                                 <option value="Pedagang Kecil" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pekerjaan_ibu == 'Pedagang Kecil')
                                     selected
                                     @endif
@@ -557,18 +565,18 @@
                                     selected
                                     @endif
                                     >PAUD</option>
-                                <option value="SD / Sederajat" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_wali == 'SD / Sederajat')
+                                <option value="SD / sederajat" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_wali == 'SD / sederajat')
                                     selected
                                     @endif
-                                    >SD / Sederajat</option>
-                                <option value="SMP / Sederajat" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_wali == 'SMP / Sederajat')
+                                    >SD / sederajat</option>
+                                <option value="SMP / sederajat" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_wali == 'SMP / sederajat')
                                     selected
                                     @endif
-                                    >SMP / Sederajat</option>
-                                <option value="SMA / Sederajat" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_wali == 'SMA / Sederajat')
+                                    >SMP / sederajat</option>
+                                <option value="SMA / sederajat" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_wali == 'SMA / sederajat')
                                     selected
                                     @endif
-                                    >SMA / Sederajat</option>
+                                    >SMA / sederajat</option>
                                 <option value="Putus SD" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pendidikan_wali == 'Putus SD')
                                     selected
                                     @endif
@@ -601,14 +609,14 @@
                                     selected
                                     @endif
                                     >Peternak</option>
-                                <option value="PNS/PORLI/TNI" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pekerjaan_wali == 'PNS/PORLI/TNI')
+                                <option value="PNS/TNI/Polri" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pekerjaan_wali == 'PNS/TNI/Polri')
                                     selected
                                     @endif
-                                    >PNS/PORLI/TNI</option>
-                                <option value="Kariyawan Swasta" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pekerjaan_wali == 'Kariyawan Swasta')
+                                    >PNS/TNI/Polri</option>
+                                <option value="Karyawan Swasta" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pekerjaan_wali == 'Karyawan Swasta')
                                     selected
                                     @endif
-                                    >Kariyawan Swasta</option>
+                                    >Karyawan Swasta</option>
                                 <option value="Pedagang Kecil" @if (Auth::user()->tem_orangtua(Auth::user()->id)->pekerjaan_wali == 'Pedagang Kecil')
                                     selected
                                     @endif

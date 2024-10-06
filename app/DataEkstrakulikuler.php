@@ -15,9 +15,8 @@ class DataEkstrakulikuler extends Model
         return $this->belongsTo('App\User')->withDefault();
     }
 
-    public function pilihan1($id)
+    public function pilihan1()
     {
-        $pilihan1 = Ekstrakulikuler::where('pilihan_1', $id)->first();
-        return $pilihan1;
+        return $this->belongsTo(Ekstrakulikuler::class, 'nama_ekstra', 'pilihan_1');
     }
 }

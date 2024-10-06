@@ -46,8 +46,8 @@
                             <form action="{{ route('priodik.destroy', $data->id) }}" method="post">
                                 @csrf
                                 @method('delete')
-                                <a href="{{ route('priodik.edit', Crypt::encrypt($data->id)) }}" class="btn btn-success btn-sm mt-2"><i class="nav-icon fas fa-edit"></i> &nbsp; Edit</a>
-                                <button onclick="return confirm('Apakah Anda Yakin Menghapus Permanen Data?');" class="btn btn-danger btn-sm mt-2"><i class="nav-icon fas fa-trash-alt"></i> &nbsp; Hapus</button>
+                                <a href="{{ route('priodik.edit', Crypt::encrypt($data->id)) }}" class="btn btn-success btn-sm btn-block"><i class="nav-icon fas fa-edit"></i>&nbsp;Edit</a>
+                                <button onclick="return confirm('Apakah Anda Yakin Menghapus Permanen Data?');" class="btn btn-danger btn-sm btn-block"><i class="nav-icon fas fa-trash-alt"></i>&nbsp; Hapus</button>
                             </form>
                             
                         </td>

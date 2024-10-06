@@ -23,7 +23,8 @@ Route::get('/clear-cache', function () {
 });
 
 Auth::routes();
-Route::post('/home/login', 'HomeController@login')->name('postlogin');
+Route::post('/home/login', 'HomeController@login')->name('postlogin')->middleware('kepsek');
+
 
 Route::middleware(['auth'])->group(function () {
   Route::get('/', 'HomeController@index')->name('home');
@@ -33,15 +34,26 @@ Route::middleware(['auth'])->group(function () {
   Route::get('/user/password', 'UserController@edit_password')->name('user.password');
   Route::post('/user/ubah-password', 'UserController@ubah_password')->name('user.ubah-password');
 
+  //laporanEKSKUL
+  Route::get('/LaporanEkskul', 'LaporanEkskulController@index')->name('LaporanEkskul');
+  Route::get('/LaporanEkskul/cetakLaporan/{id}', 'LaporanEkskulController@cetakLaporan')->name('LaporanEkskul.cetakLaporan');
+  Route::get('/LaporanEkskul/cetakRekap/{id}', 'LaporanEkskulController@cetakRekap')->name('LaporanEkskul.cetakRekap');
+  Route::get('/LaporanEkskul/rekap', 'LaporanEkskulController@rekap')->name('LaporanEkskul.rekap');
+  Route::get('/LaporanEkskul/generateBulan', 'LaporanEkskulController@generateBulan')->name('LaporanEkskul.generateBulan');
+  Route::get('/LaporanEkskul/setRekap/{id}', 'LaporanEkskulController@setRekap')->name('LaporanEkskul.setRekap');
+  Route::resource('/LaporanEkskul', 'LaporanEkskulController');
+
+  Route::get('/DataEkstrakulikuler/pembinaEkstra', 'DataEkstrakulikulerController@pembinaEkstra')->name('DataEkstrakulikuler.pembinaEkstra');
+  Route::get('/DataEkstrakulikuler/showDataEkstra{id}', 'DataEkstrakulikulerController@showDataEkstra')->name('DataEkstrakulikuler.showDataEkstra');
+  Route::get('/DataEkstrakulikuler/export_AbsenEkstra{id}', 'DataEkstrakulikulerController@export_AbsenEkstra')->name('DataEkstrakulikuler.export_AbsenEkstra');
+
   Route::middleware(['guru'])->group(function () {
     Route::get('/pribadi/guru', 'PribadiController@guru')->name('pribadi.guru');
     Route::get('/orangtua/guru', 'OrangtuaController@guru')->name('orangtua.guru');
     Route::get('/smp/guru', 'SmpController@guru')->name('smp.guru');
     Route::get('/priodik/guru', 'PriodikController@guru')->name('priodik.guru');
-    Route::get('/ekstrakulikuler/guru', 'ekstrakulikulerController@guru')->name('ekstrakulikuler.guru');
-    Route::get('/DataEkstrakulikuler/pembinaEkstra', 'DataEkstrakulikulerController@pembinaEkstra')->name('DataEkstrakulikuler.pembinaEkstra');
-    Route::get('/DataEkstrakulikuler/showDataEkstra{id}', 'DataEkstrakulikulerController@showDataEkstra')->name('DataEkstrakulikuler.showDataEkstra');
-    Route::get('/DataEkstrakulikuler/export_AbsenEkstra{id}', 'DataEkstrakulikulerController@export_AbsenEkstra')->name('DataEkstrakulikuler.export_AbsenEkstra');
+    Route::get('/ekstrakulikuler/guru', 'EkstrakulikulerController@guru')->name('ekstrakulikuler.guru');
+ 
   });
 
   Route::middleware(['siswa'])->group(function () {

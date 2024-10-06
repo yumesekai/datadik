@@ -26,7 +26,8 @@ class DataEkstrakulikulerController extends Controller
     public function index()
     {
         $ekstra = DataEkstrakulikuler::OrderBy('nama_ekstra','asc')->get();
-        return view('admin.ekstrakulikuler.index', compact('ekstra'));
+	$pil = Ekstrakulikuler::all();
+        return view('admin.ekstrakulikuler.index', compact('ekstra','pil'));
     }
 
     /**
@@ -144,6 +145,7 @@ class DataEkstrakulikulerController extends Controller
     {
         $user = Auth::user()->id;
         $ekstra = DataEkstrakulikuler::all()->where('user_id', $user);
+        $ekstra_all = DataEkstrakulikuler::all();
         return view('guru.ekstrakulikuler.pembina', compact('ekstra'));
     }
 

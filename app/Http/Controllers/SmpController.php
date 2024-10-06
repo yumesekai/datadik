@@ -47,8 +47,6 @@ class SmpController extends Controller
 
         $this->validate($request, [
             'sekolah_asal' => 'required',
-            'no_ijasah' => 'required',
-            'no_skhun' => 'required',
         ]);
 
         TemSmp::create([
@@ -78,8 +76,6 @@ class SmpController extends Controller
 
         $this->validate($request, [
             'sekolah_asal' => 'required',
-            'no_ijasah' => 'required',
-            'no_skhun' => 'required',
         ]);
 
         $siswa_data = [
@@ -127,8 +123,6 @@ class SmpController extends Controller
         $this->validate($request, [
             'nama' => 'required',
             'sekolah_asal' => 'required',
-            'no_ijasah' => 'required',
-            'no_skhun' => 'required',
         ]);
 
         Smp::create([
@@ -157,8 +151,6 @@ class SmpController extends Controller
 
         $this->validate($request, [
             'sekolah_asal' => 'required',
-            'no_ijasah' => 'required',
-            'no_skhun' => 'required',
         ]);
 
         $siswa_data = [

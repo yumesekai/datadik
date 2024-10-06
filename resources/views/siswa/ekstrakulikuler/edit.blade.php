@@ -34,8 +34,12 @@
                             <select onchange="unlock_pil2()" id="pilihan_1" name="pilihan_1" class="readonly select2bs4 form-control @error('pilihan_1') is-invalid @enderror">
                             <option  value="">-- Select {{ __('Ekstrakulikuler') }} --</option>
                                 @foreach ($DataEkstra as $data)
-                                <option value="{{ $data->nama_ekstra }}" {{ old('pilihan_1') == $data->nama_ekstra || $ekstra->pilihan_1 == $data->nama_ekstra ? 'selected' : '' }}>{{ $data->nama_ekstra }}</option>
-                                @endforeach
+					                @if($data->nama_ekstra == 'Room Division')
+                                		<option value=""></option>
+                                	@else
+						                <option value="{{ $data->nama_ekstra }}" {{ old('pilihan_1') == $data->nama_ekstra || $ekstra->pilihan_1 == $data->nama_ekstra ? 'selected' : '' }}>{{ $data->nama_ekstra }}</option>
+					                @endif
+				                @endforeach
                             </select>
                         </div>
                     </div>
@@ -46,8 +50,12 @@
                             <select onchange="unlock_pil3()" disabled id="pilihan_2" name="pilihan_2" class="select2bs4 form-control @error('pilihan_2') is-invalid @enderror">
                                 <option value="">-- Select {{ __('Ekstrakulikuler') }} --</option>
                                 @foreach ($DataEkstra as $data)
-                                <option value="{{ $data->nama_ekstra }}" {{ old('pilihan_2') == $data->nama_ekstra || $ekstra->pilihan_2 == $data->nama_ekstra ? 'selected' : '' }}>{{ $data->nama_ekstra }}</option>
-                                @endforeach
+					@if($data->nama_ekstra == 'Room Division')
+                                		<option value=""></option>
+                                	@else
+						<option value="{{ $data->nama_ekstra }}" {{ old('pilihan_2') == $data->nama_ekstra || $ekstra->pilihan_2 == $data->nama_ekstra ? 'selected' : '' }}>{{ $data->nama_ekstra }}</option>
+                                	@endif
+				@endforeach
                             </select>
                         </div>
                     </div>
@@ -58,12 +66,22 @@
                             <select id="pilihan_3" disabled name="pilihan_3" class="select2bs4 form-control @error('pilihan_3') is-invalid @enderror">
                                 <option value="">-- Select {{ __('Ekstrakulikuler') }} --</option>
                                 @foreach ($DataEkstra as $data)
-                                <option value="{{ $data->nama_ekstra }}" {{ old('pilihan_3') == $data->nama_ekstra || $ekstra->pilihan_3 == $data->nama_ekstra ? 'selected' : '' }}>{{ $data->nama_ekstra }}</option>
-                                @endforeach
+					@if($data->nama_ekstra == 'Room Division')
+                                		<option value=""></option>
+                                	@else
+						<option value="{{ $data->nama_ekstra }}" {{ old('pilihan_3') == $data->nama_ekstra || $ekstra->pilihan_3 == $data->nama_ekstra ? 'selected' : '' }}>{{ $data->nama_ekstra }}</option>
+					@endif
+				@endforeach
                             </select>
                         </div>
                     </div>
-                   
+		   <div class="col-md-12 required">
+                        <div class="form-group">
+                            <label for="nama">Nomer Handphone</label>
+                            <input type="number" id="no_hp" name="no_hp" value="{{ Auth::user()->ekstrakulikuler(Auth::user()->id)->no_hp }}" class="form-control @error('no_hp') is-invalid @enderror">
+                        </div>
+                    </div>
+    
                 </div>
             </div>
             <!-- /.card-body -->

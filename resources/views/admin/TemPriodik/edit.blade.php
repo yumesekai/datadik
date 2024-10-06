@@ -2,14 +2,14 @@
 @section('heading', 'Detail Pengajuan Data Priodik')
 @section('page')
 <li class="breadcrumb-item active"><a href="{{ route('TemPriodik.index') }}">Data Priodik</a></li>
-<li class="breadcrumb-item active">Edit Data Priodik</li>
+<li class="breadcrumb-item active">Detail Pengajuan Data Priodik</li>
 @endsection
 @section('content')
 <div class="col-md-12">
     <!-- general form elements -->
     <div class="card card-primary">
         <div class="card-header">
-            <h3 class="card-title">Detail Pengajuan Data Priodik</h3>
+            <h3 class="card-title">Data Priodik <b> {{ $tem_priodik->user->name }} </b></h3>
         </div>
         <!-- /.card-header -->
 

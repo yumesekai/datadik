@@ -22,7 +22,7 @@ class CreatePribadisTable extends Migration
             $table->string('nik');
             $table->string('agama');
             $table->string('tmp_lahir');
-            $table->date('tgl_lahir');
+            $table->string('tgl_lahir');
             $table->string('alamat')->nullable();
             $table->string('desa')->nullable();
             $table->string('kelurahan')->nullable();

@@ -17,6 +17,7 @@ use App\TemOrangtua;
 use App\TemSmp;
 use App\TemPriodik;
 use App\DataEkstrakulikuler;
+use App\Ekstrakulikuler;
 use App\Imports\DataEkstraImport;
 use App\Imports\KelasImport;
 use App\Imports\UserSiswaImport;
@@ -132,17 +133,18 @@ class ImportController extends Controller
     {
         $user = User::where('role', 'Siswa')->count();
         if ($user >= 1) {
-            User::whereNotNull('kelas')->forceDelete();
-            Pribadi::whereNotNull('id')->forceDelete();
-            Orangtua::whereNotNull('id')->forceDelete();
-            Smp::whereNotNull('id')->forceDelete();
-            Priodik::whereNotNull('id')->forceDelete();
-            TemPribadi::whereNotNull('id')->forceDelete();
-            TemOrangtua::whereNotNull('id')->forceDelete();
-            TemSmp::whereNotNull('id')->forceDelete();
-            TemPriodik::whereNotNull('id')->forceDelete();
-            DataEkstrakulikuler::whereNotNull('id')->forceDelete();
-            Kelas::whereNotNull('id')->forceDelete();
+            //User::whereNotNull('kelas_id')->forceDelete();
+            //Pribadi::whereNotNull('id')->forceDelete();
+            //Orangtua::whereNotNull('id')->forceDelete();
+            //Smp::whereNotNull('id')->forceDelete();
+            //Priodik::whereNotNull('id')->forceDelete();
+            //TemPribadi::whereNotNull('id')->forceDelete();
+            //TemOrangtua::whereNotNull('id')->forceDelete();
+            //TemSmp::whereNotNull('id')->forceDelete();
+            //TemPriodik::whereNotNull('id')->forceDelete();
+            //DataEkstrakulikuler::whereNotNull('id')->forceDelete();
+	    Ekstrakulikuler::whereNotNull('id')->forceDelete();
+            //Kelas::whereNotNull('id')->forceDelete();
             return redirect()->back()->with('success', 'Data seluruh table berhasil dihapus!');
         } else {
             return redirect()->back()->with('error', 'Data seluruh tabel gagal dihapus!');

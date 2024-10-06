@@ -21,22 +21,31 @@
                     <input type="text" id="id" name="id" value="{{ Auth::user()->id }}" class="form-control d-none" readonly>
                     <input type="text" id="priodik_id" name="priodik_id" value="{{ Auth::user()->priodik(Auth::user()->id)->id }}" class="form-control d-none" readonly>
                     <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="kelas">Tinggi Badan</label>
+                      <label for="kelas">Tinggi Badan</label>
+                        <div class="input-group">
                             <input type="text" id="tinggi_badan" name="tinggi_badan" value="{{ Auth::user()->priodik(Auth::user()->id)->tinggi_badan }}" class="form-control @error('tinggi_badan') is-invalid @enderror">
-                        </div>
+                        <div class="input-group-prepend">
+          		    <div class="input-group-text">cm</div>
+        		</div>
+			</div>
                     </div>
                     <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="kelas">Berat Badan</label>
+                      <label for="kelas">Berat Badan</label>
+                        <div class="input-group">
                             <input type="text" id="berat_badan" name="berat_badan" value="{{ Auth::user()->priodik(Auth::user()->id)->berat_badan }}" class="form-control @error('berat_badan') is-invalid @enderror">
-                        </div>
+                      	<div class="input-group-prepend">
+          		    <div class="input-group-text">kg</div>
+        		</div>
+                       </div>
                     </div>
                     <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="kelas">Jarak Sekolah</label>
+                      <label for="kelas">Jarak Sekolah</label>
+                        <div class="input-group">
                             <input type="text" id="jarak_sekolah" name="jarak_sekolah" value="{{ Auth::user()->priodik(Auth::user()->id)->jarak_sekolah }}" class="form-control @error('jarak_sekolah') is-invalid @enderror">
-                        </div>
+                     	<div class="input-group-prepend">
+          		    <div class="input-group-text">Mater</div>
+        		</div>
+   			</div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">

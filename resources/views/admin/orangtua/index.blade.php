@@ -37,23 +37,23 @@
                         <td>{{ $data->status }}</td>
                         <td>
                             @if ($data->user->berkas_kk == '')
-                            <a><b>Kartu Keluarga</a>
+                            <a class="btn btn-primary btn-sm btn-block disabled text-white" role="button" aria-disabled="false">Kartu Keluarga</a>
                             @else
-                            <a href="{{ asset($data->user->berkas_kk) }}" target="_blank" rel="noopener noreferrer">
+                            <a class="btn btn-primary btn-sm btn-block text-white" role="button" href="{{ asset($data->user->berkas_kk) }}" target="_blank" rel="noopener noreferrer">
+
                                 Kartu Keluarga</a>
                             @endif
-                            <br>
                         </td>
                         <td>
                             @if(Auth::user()->role == 'Admin' )
                             <form action="{{ route('orangtua.destroy', $data->id) }}" method="post">
                                 @csrf
                                 @method('delete')
-                                <a href="{{ route('orangtua.edit', Crypt::encrypt($data->id)) }}" class="btn btn-success btn-sm mt-2"><i class="nav-icon fas fa-edit"></i> &nbsp; Edit</a>
-                                <button onclick="return confirm('Apakah Anda Yakin Menghapus Permanen Data?');" class="btn btn-danger btn-sm mt-2"><i class="nav-icon fas fa-trash-alt"></i> &nbsp; Hapus</button>
+                                <a href="{{ route('orangtua.edit', Crypt::encrypt($data->id)) }}" class="btn btn-success btn-sm btn-block"><i class="nav-icon fas fa-edit"></i>&nbsp;Edit</a>
+                                <button onclick="return confirm('Apakah Anda Yakin Menghapus Permanen Data?');" class="btn btn-danger btn-sm btn-block"><i class="nav-icon fas fa-trash-alt"></i>&nbsp;Hapus</button>
                             </form>
                             @else
-                            <a href="{{ route('orangtua.edit', Crypt::encrypt($data->id)) }}" class="btn btn-warning btn-sm mt-2"><i class="nav-icon fas fa-eye"></i> &nbsp; Detail Data</a>
+                            <a href="{{ route('orangtua.edit', Crypt::encrypt($data->id)) }}" class="btn btn-warning btn-sm btn-block mt-2"><i class="nav-icon fas fa-eye"></i> &nbsp; Detail Data</a>
                             @endif
                         </td>
                     </tr>

@@ -21,7 +21,7 @@
                         <th>No.</th>
                         <th>Nama Ekstrakulikuler</th>
                         <th>Pembina</th>
-                        <th>Jenis Ekstrakulikuler</th>
+                        <th>Anggota</th>
                         @if(Auth::user()->role == 'Admin' )
                         <th>Aksi</th>
                         @endif
@@ -33,15 +33,18 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $data->nama_ekstra }}</td>
                         <td>{{ $data->user->name }}</td>
-                        <td>{{ $data->jenis_ekstra }}</td>
+                       <td>{{ $pil->where('pilihan_1', $data->nama_ekstra)->count() +  
+			$pil->where('pilihan_2', $data->nama_ekstra)->count() +
+			$pil->where('pilihan_3', $data->nama_ekstra)->count() }} Siswa</td>
                         @if(Auth::user()->role == 'Admin' )
                         <td>
                             
                             <form action="{{ route('DataEkstrakulikuler.destroy', $data->id) }}" method="post">
                                 @csrf
                                 @method('delete')
-                                <a href="{{ route('DataEkstrakulikuler.edit', Crypt::encrypt($data->id)) }}" class="btn btn-success btn-sm mt-2"><i class="nav-icon fas fa-edit"></i> &nbsp; Edit</a>
-                                <button onclick="return confirm('Apakah Anda Yakin Menghapus Permanen Data?');" class="btn btn-danger btn-sm mt-2"><i class="nav-icon fas fa-trash-alt"></i> &nbsp; Hapus</button>
+                                <a href="{{ route('DataEkstrakulikuler.edit', Crypt::encrypt($data->id)) }}" class="btn btn-block btn-success btn-sm"><i class="nav-icon fas fa-edit"></i> &nbsp; Edit</a>
+                                <a href="{{ route('DataEkstrakulikuler.showDataEkstra', Crypt::encrypt($data->id)) }}" class="btn btn-block btn-warning btn-sm"><i class="far fa-eye"></i></i> &nbsp; Lihat Anggota</a>
+                                <button onclick="return confirm('Apakah Anda Yakin Menghapus Permanen Data?');" class="btn btn-block btn-danger btn-sm"><i class="nav-icon fas fa-trash-alt"></i> &nbsp; Hapus</button>
                             </form>
                             
                         </td>
@@ -59,6 +62,8 @@
 @endsection
 @section('script')
 <script>
+    $("#PembinaEkskul").addClass("active");
+    $("#liPembinaEkskul").addClass("menu-open");
     $("#Ekstrakulikuler").addClass("active");
 </script>
 @endsection

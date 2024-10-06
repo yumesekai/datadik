@@ -31,26 +31,35 @@
                     </div>
 
                     <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="kelas">Tinggi Badan</label>
+                       <label for="kelas">Tinggi Badan</label>
+                        <div class="input-group">
                             <input type="text" id="tinggi_badan" name="tinggi_badan" class="form-control @error('tinggi_badan') is-invalid @enderror" value="{{ old('tinggi_badan') }}">
-                        </div>
+ 				<div class="input-group-append">
+    					<span class="input-group-text">cm</span>
+  				</div>			                            
+			</div>
                     </div>
                     <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="kelas">Berat Badan</label>
+                       <label for="kelas">Berat Badan</label>
+                        <div class="input-group">
                             <input type="text" id="berat_badan" name="berat_badan" class="form-control @error('berat_badan') is-invalid @enderror" value="{{ old('berat_badan') }}">
-                        </div>
+				 <div class="input-group-append">
+    					<span class="input-group-text">kg</span>
+  				 </div>			                            
+			</div>
                     </div>
                     <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="kelas">Jarak Sekolah</label>
+                      <label for="kelas">Jarak Sekolah</label>
+                        <div class="input-group">
                             <input type="text" id="jarak_sekolah" name="jarak_sekolah" class="form-control @error('jarak_sekolah') is-invalid @enderror" value="{{ old('jarak_sekolah') }}">
+ 				<div class="input-group-append">
+    					<span class="input-group-text">Meter</span>
+  				</div>			    
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <div class="form-group">
-                            <label for="kelas">Jumlah Saudara</label>
+                      <label for="kelas">Jumlah Saudara</label>
+                        <div class="input-group">
                             <input type="text" id="jumlah_saudara" name="jumlah_saudara" class="form-control @error('jumlah_saudara') is-invalid @enderror" value="{{ old('jumlah_saudara') }}">
                         </div>
                     </div>

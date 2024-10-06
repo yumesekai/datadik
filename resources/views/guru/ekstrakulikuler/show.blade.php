@@ -19,6 +19,8 @@
                         <th>No.</th>
                         <th>Nama Siswa</th>
                         <th>Kelas</th>
+			            <th>Nomer Handphone</th>
+                        <th>Update Data</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,6 +29,8 @@
                         <td>{{ $loop->iteration }}</td>
                         <td>{{ $data->user->name }}</td>
                         <td>{{ $data->kelas->nama_kelas }}</td>
+			            <td>{{ $data->no_hp }}</td>
+                        <td>{{ $data->updated_at }}</td>
                     </tr>
                     @endforeach
                 </tbody>
@@ -45,6 +49,8 @@
 @endsection
 @section('script')
 <script>
+    $("#PembinaEkskul").addClass("active");
+    $("#liPembinaEkskul").addClass("menu-open");
     $("#PembinaEkstra").addClass("active");
 </script>
 @endsection

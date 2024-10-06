@@ -40,7 +40,7 @@
                     <div class="col-md-6 required">
                         <div class="form-group">
                             <label for="kelas">Kelas</label>
-                            <input type="text" id="kelas" name="kelas" value="{{ $pribadi->user->kelas }}" class="form-control @error('kelas') is-invalid @enderror">
+                            <input readonly type="text" id="kelas" name="kelas" value="{{ $pribadi->user->kelas->nama_kelas }}" class="form-control @error('kelas') is-invalid @enderror">
                         </div>
                         <div class="form-group">
                             <label for="jk">Jenis Kelamin</label>
@@ -119,7 +119,7 @@
                     <div class="col-md-6 required">
                         <div class="form-group">
                             <label for="tgl_lahir">Tanggal Lahir</label>
-                            <input type="date" id="tgl_lahir" name="tgl_lahir" value="{{ $pribadi->tgl_lahir }}" class="form-control @error('tgl_lahir') is-invalid @enderror">
+                            <input type="date" id="tgl_lahir" name="tgl_lahir" value="{{ $pribadi->tgl_lahir->format('Y-m-d') }}" class="form-control @error('tgl_lahir') is-invalid @enderror">
                         </div>
                     </div>
                     <div class="col-md-12 required">

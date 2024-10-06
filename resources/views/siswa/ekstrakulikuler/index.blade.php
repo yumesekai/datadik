@@ -12,10 +12,11 @@
         <div class="col-md-12">
             <div class="card-body" style="font-size: 15px;">
                 <ul>
-                    <li>Mohon dicek data dengan cermat dan sungguh sungguh</li>
-                    <li>Jika data yang tampil SUDAH SESUAI silahkan menekan tombol <button class="btn btn-success btn-sm mx-2" style="font-size: 9px;"><i class="nav-icon fas fa-user-check"></i> &nbsp; Data Sudah Benar</button></li>
-                    <li>Jika data yang tampil TIDAK SESUAI silahkan menekan tombol <a class="text-dark btn btn-warning btn-sm" style="font-size: 9px;"><i class="nav-icon fas fa-user-pen"></i> &nbsp; Perbaiki Data</a></li>
-                    <li><a class="text-dark btn btn-warning btn-sm" style="font-size: 9px;"><i class="nav-icon fas fa-user-pen"></i> &nbsp; Edit Ajuan Sebelumnya</a> Tombol ini digunakan jika ingin mengubah data yang SUDAH DIAJUKAN</li>
+                    <li>Bagi siswa kelas 10 <b>WAJIB</b> mengisi ekstra pilihan 1 dan 2</li>
+                    <li>Bagi siswa kelas 11 <b>WAJIB</b> mengisi ekstra pilihan 1</li>
+                    <li>Bagi siswa kelas 12 <b>TIDAK WAAJIB</b> mengikuti ekstra</li>
+                    <li>Perubahan data ekstra hanya bisa dilakukan sampai tanggal <a class="text-light btn btn-danger btn-sm" style="font-size: 12px;"><i class="nav-icon fas fa-user-pen"></i> &nbsp; 10 September 2024</a></li>
+                    <li><a class="text-dark btn btn-warning btn-sm" style="font-size: 9px;"><i class="nav-icon fas fa-user-pen"></i> &nbsp; Ubah Pilihan Esktrakulikuler</a> Tombol ini digunakan jika ingin mengubah data ekstrakulikuler</li>
                 </ul>
             </div>
         </div>
@@ -66,7 +67,12 @@
                             <input readonly type="text" id="kelas" name="kelas" value="{{ Auth::user()->kelas->nama_kelas }}" class="form-control @error('kelas') is-invalid @enderror">
                         </div>
                     </div>
-
+		    <div class="col-md-12 required">
+                        <div class="form-group">
+                            <label for="nama">Nomer Handphone</label>
+                            <input readonly type="number" id="no_hp" name="no_hp" value="{{ Auth::user()->ekstrakulikuler(Auth::user()->id)->no_hp }}" class="form-control @error('no_hp') is-invalid @enderror">
+                        </div>
+                    </div>
                     <div class="col-md-12">
                         <div class="form-group">
                             <label for="pilihan_1">Pilihan 1 : </label>

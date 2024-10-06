@@ -43,6 +43,7 @@ class AbsenEkstra implements FromQuery, WithTitle, WithMapping, WithHeadings
             [
                 $ekstrakulikuler->user->name,
                 $ekstrakulikuler->kelas->nama_kelas,
+		$ekstrakulikuler->no_hp,
             ],
         ];
     }
@@ -52,6 +53,7 @@ class AbsenEkstra implements FromQuery, WithTitle, WithMapping, WithHeadings
         return [
             'Nama Siswa',
             'Kelas',
+	    'Nomer Handphone',
         ];
     }
 

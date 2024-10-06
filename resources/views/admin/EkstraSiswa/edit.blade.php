@@ -36,6 +36,13 @@
                         </div>
                     </div>
 
+		  <div class="col-md-12 required">
+                        <div class="form-group">
+                            <label for="nama">Nomer Handphone</label>
+                            <input type="number" id="no_hp" name="no_hp" value="{{ $ekstra->no_hp }}" class="form-control @error('no_hp') is-invalid @enderror">
+                        </div>
+                    </div>
+
                     <div id="valid1" class="col-md-12">
                         <div class="form-group">
                             <label for="pilihan_1">Ekstra Pilihan 1</label>

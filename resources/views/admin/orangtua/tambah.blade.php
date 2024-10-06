@@ -61,6 +61,7 @@
                                 <option value="D1" {{ old('pendidikan_ayah') == 'D1' ? 'selected' : '' }}>D1</option>
                                 <option value="D2" {{ old('pendidikan_ayah') == 'D2' ? 'selected' : '' }}>D2</option>
                                 <option value="D3" {{ old('pendidikan_ayah') == 'D3' ? 'selected' : '' }}>D3</option>
+                                <option value="D4" {{ old('pendidikan_ayah') == 'D4' ? 'selected' : '' }}>D3</option>
                                 <option value="Paket A" {{ old('pendidikan_ayah') == 'Paket A' ? 'selected' : '' }}>Paket A</option>
                                 <option value="Paket B" {{ old('pendidikan_ayah') == 'Paket B' ? 'selected' : '' }}>Paket B</option>
                                 <option value="Paket C" {{ old('pendidikan_ayah') == 'Paket C' ? 'selected' : '' }}>Paket C</option>
@@ -68,11 +69,11 @@
                                 <option value="S2" {{ old('pendidikan_ayah') == 'S2' ? 'selected' : '' }}>S2</option>
                                 <option value="S3" {{ old('pendidikan_ayah') == 'S3' ? 'selected' : '' }}>S3</option>
                                 <option value="PAUD" {{ old('pendidikan_ayah') == 'PAUD' ? 'selected' : '' }}>PAUD</option>
-                                <option value="SD / Sederajat" {{ old('pendidikan_ayah') == 'SD / Sederajat' ? 'selected' : '' }}>SD / Sederajat</option>
-                                <option value="SMP / Sederajat" {{ old('pendidikan_ayah') == 'SMP / Sederajat' ? 'selected' : '' }}>SMP / Sederajat</option>
-                                <option value="SMA / Sederajat" {{ old('pendidikan_ayah') == 'SMA / Sederajat' ? 'selected' : '' }}>SMA / Sederajat</option>
+                                <option value="SD / sederajat" {{ old('pendidikan_ayah') == 'SD / sederajat' ? 'selected' : '' }}>SD / Sederajat</option>
+                                <option value="SMP / sederajat" {{ old('pendidikan_ayah') == 'SMP / sederajat' ? 'selected' : '' }}>SMP / Sederajat</option>
+                                <option value="SMA / sederajat" {{ old('pendidikan_ayah') == 'SMA / sederajat' ? 'selected' : '' }}>SMA / Sederajat</option>
                                 <option value="Putus SD" {{ old('pendidikan_ayah') == 'Putus SD' ? 'selected' : '' }}>Putus SD</option>
-                                <option value="Tidak Sekolah" {{ old('pendidikan_ayah') == 'Tidak Sekolah' ? 'selected' : '' }}> Tidak Sekolah</option>
+                                <option value="Tidak sekolah" {{ old('pendidikan_ayah') == 'Tidak sekolah' ? 'selected' : '' }}> Tidak Sekolah</option>
                             </select>
                         </div>
                     </div>
@@ -85,7 +86,7 @@
                                 <option value="Nelayan" {{ old('pekerjaan_ayah') == 'Nelayan' ? 'selected' : '' }}>Nelayan</option>
                                 <option value="Petani" {{ old('pekerjaan_ayah') == 'Petani' ? 'selected' : '' }}>Petani</option>
                                 <option value="Peternak" {{ old('pekerjaan_ayah') == 'Peternak' ? 'selected' : '' }}>Peternak</option>
-                                <option value="PNS/PORLI/TNI" {{ old('pekerjaan_ayah') == 'PNS/PORLI/TNI' ? 'selected' : '' }}>PNS/PORLI/TNI</option>
+                                <option value="PNS/TNI/Polri" {{ old('pekerjaan_ayah') == 'PNS/TNI/Polri' ? 'selected' : '' }}>PNS/PORLI/TNI</option>
                                 <option value="Kariyawan Swasta" {{ old('pekerjaan_ayah') == 'Kariyawan Swasta' ? 'selected' : '' }}>Kariyawan Swasta</option>
                                 <option value="Pedagang Kecil" {{ old('pekerjaan_ayah') == 'Pedagang Kecil' ? 'selected' : '' }}>Pedagang Kecil</option>
                                 <option value="Pedagang Besar" {{ old('pekerjaan_ayah') == 'Pedagang Besar' ? 'selected' : '' }}>Pedagang Besar</option>
@@ -162,6 +163,7 @@
                                 <option value="D1" {{ old('pendidikan_ibu') == 'D1' ? 'selected' : '' }}>D1</option>
                                 <option value="D2" {{ old('pendidikan_ibu') == 'D2' ? 'selected' : '' }}>D2</option>
                                 <option value="D3" {{ old('pendidikan_ibu') == 'D3' ? 'selected' : '' }}>D3</option>
+                                <option value="D4" {{ old('pendidikan_ibu') == 'D4' ? 'selected' : '' }}>D3</option>
                                 <option value="Paket A" {{ old('pendidikan_ibu') == 'Paket A' ? 'selected' : '' }}>Paket A</option>
                                 <option value="Paket B" {{ old('pendidikan_ibu') == 'Paket B' ? 'selected' : '' }}>Paket B</option>
                                 <option value="Paket C" {{ old('pendidikan_ibu') == 'Paket C' ? 'selected' : '' }}>Paket C</option>
@@ -169,9 +171,9 @@
                                 <option value="S2" {{ old('pendidikan_ibu') == 'S2' ? 'selected' : '' }}>S2</option>
                                 <option value="S3" {{ old('pendidikan_ibu') == 'S3' ? 'selected' : '' }}>S3</option>
                                 <option value="PAUD" {{ old('pendidikan_ibu') == 'PAUD' ? 'selected' : '' }}>PAUD</option>
-                                <option value="SD / Sederajat" {{ old('pendidikan_ibu') == 'SD / Sederajat' ? 'selected' : '' }}>SD / Sederajat</option>
-                                <option value="SMP / Sederajat" {{ old('pendidikan_ibu') == 'SMP / Sederajat' ? 'selected' : '' }}>SMP / Sederajat</option>
-                                <option value="SMA / Sederajat" {{ old('pendidikan_ibu') == 'SMA / Sederajat' ? 'selected' : '' }}>SMA / Sederajat</option>
+                                <option value="SD / sederajat" {{ old('pendidikan_ibu') == 'SD / sederajat' ? 'selected' : '' }}>SD / Sederajat</option>
+                                <option value="SMP / sederajat" {{ old('pendidikan_ibu') == 'SMP / sederajat' ? 'selected' : '' }}>SMP / Sederajat</option>
+                                <option value="SMA / sederajat" {{ old('pendidikan_ibu') == 'SMA / sederajat' ? 'selected' : '' }}>SMA / Sederajat</option>
                                 <option value="Putus SD" {{ old('pendidikan_ibu') == 'Putus SD' ? 'selected' : '' }}>Putus SD</option>
                                 <option value="Tidak Sekolah" {{ old('pendidikan_ibu') == 'Tidak Sekolah' ? 'selected' : '' }}> Tidak Sekolah</option>
                             </select>
@@ -186,7 +188,7 @@
                                 <option value="Nelayan" {{ old('pekerjaan_ibu') == 'Nelayan' ? 'selected' : '' }}>Nelayan</option>
                                 <option value="Petani" {{ old('pekerjaan_ibu') == 'Petani' ? 'selected' : '' }}>Petani</option>
                                 <option value="Peternak" {{ old('pekerjaan_ibu') == 'Peternak' ? 'selected' : '' }}>Peternak</option>
-                                <option value="PNS/PORLI/TNI" {{ old('pekerjaan_ibu') == 'PNS/PORLI/TNI' ? 'selected' : '' }}>PNS/PORLI/TNI</option>
+                                <option value="PNS/TNI/Polri" {{ old('pekerjaan_ibu') == 'PNS/TNI/Polri' ? 'selected' : '' }}>PNS/PORLI/TNI</option>
                                 <option value="Kariyawan Swasta" {{ old('pekerjaan_ibu') == 'Kariyawan Swasta' ? 'selected' : '' }}>Kariyawan Swasta</option>
                                 <option value="Pedagang Kecil" {{ old('pekerjaan_ibu') == 'Pedagang Kecil' ? 'selected' : '' }}>Pedagang Kecil</option>
                                 <option value="Pedagang Besar" {{ old('pekerjaan_ibu') == 'Pedagang Besar' ? 'selected' : '' }}>Pedagang Besar</option>

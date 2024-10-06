@@ -37,6 +37,8 @@
 @endsection
 @section('script')
 <script>
+    $("#PembinaEkskul").addClass("active");
+    $("#liPembinaEkskul").addClass("menu-open");
     $("#PembinaEkstra").addClass("active");
 </script>
 @endsection

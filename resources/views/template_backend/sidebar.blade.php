@@ -31,12 +31,39 @@
                             <p>Managemen User</p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{ route('DataEkstrakulikuler.index') }}" class="nav-link" id="Ekstrakulikuler">
-                            <i class="nav-icon fas fa-volleyball-ball fa-spin"></i>
-                            <p>Data Ekstrakulikuler</p>
-                        </a>
-                    </li>
+                    <li class="nav-item has-treeview" id="liPembinaEkskul">
+                    <a href="#" class="nav-link" id="PembinaEkskul">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>
+                            Ekstrakurikuler
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview ml-4">
+                        <li class="nav-item">
+                            <a href="{{ route('DataEkstrakulikuler.index') }}" class="nav-link" id="Ekstrakulikuler">
+                                <i class="fa-solid fa-ranking-star"></i>
+                                <p>Data Ekstrakulikuler</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview ml-4">
+                        <li class="nav-item">
+                            <a href="{{ route('LaporanEkskul.index') }}" class="nav-link" id="LaporanEkskul">
+                                <i class="fa-solid fa-book"></i>
+                                <p>Laporan Ekstrakulikuler</p>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview ml-4">
+                        <li class="nav-item">
+                            <a href="{{ route('LaporanEkskul.rekap') }}" class="nav-link" id="rekapBulanan">
+                                <i class="fa-regular fa-calendar-minus"></i>
+                                <p>Rekap Bulanan</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                     <li class="nav-item">
                         <a href="{{ route('kelas.index') }}" class="nav-link" id="kelas">
                             <i class="nav-icon fa-solid fa-graduation-cap"></i>
@@ -142,7 +169,7 @@
                     </a>
                 </li>
                 
-                <li class="nav-item has-treeview" id="liDataSiswa">
+                <li class="d-none nav-item has-treeview" id="liDataSiswa">
                     <a href="#" class="nav-link" id="DataSiswa">
                         <i class="nav-icon fas fa-user"></i>
                         <p>
@@ -190,7 +217,8 @@
                         <p>Dashboard</p>
                     </a>
                 </li>
-                <li class="nav-item has-treeview" id="liDataGuru">
+                @if (Auth::user()->kelas->nama_kelas != 'none')
+		        <li class="nav-item has-treeview" id="liDataGuru">
                     <a href="#" class="nav-link" id="DataGuru">
                         <i class="nav-icon fas fa-user"></i>
                         <p>
@@ -231,13 +259,34 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ route('DataEkstrakulikuler.pembinaEkstra') }}" class="nav-link" id="PembinaEkstra">
-                        <i class="nav-icon fas fa-volleyball-ball fa-spin"></i>
-                        <p>Ekstra Binaan</p>
+		@else
+		@endif
+                <li class="nav-item has-treeview" id="liPembinaEkskul">
+                    <a href="#" class="nav-link" id="PembinaEkskul">
+                        <i class="fa-solid fa-ranking-star"></i>
+                        <p>
+                            Pembina Ekstra
+                            <i class="fas fa-angle-left right"></i>
+                        </p>
                     </a>
+                    <ul class="nav nav-treeview ml-4">
+                        <li class="nav-item">
+                        <a href="{{ route('DataEkstrakulikuler.pembinaEkstra') }}" class="nav-link" id="PembinaEkstra">
+                        <i class="fas fa-person nav-icon"></i>
+                            <p>List Peserta</p>
+                        </a>
+                        </li>
+                    </ul>
+                    <ul class="nav nav-treeview ml-4">
+                        <li class="nav-item">
+                            <a href="{{ route('LaporanEkskul.index') }}" class="nav-link" id="LaporanEkskul">
+                                <i class="fa-solid fa-book"></i>
+                                <p>Laporan Ekstra</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
-                @else
+		@else
                 <li class="nav-item has-treeview">
                     <a href="{{ url('/') }}" class="nav-link" id="Home">
                         <i class="nav-icon fas fa-home"></i>

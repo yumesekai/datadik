@@ -42,13 +42,13 @@
                             <input type="text" id="no_un" name="no_un" class="form-control @error('no_un') is-invalid @enderror" value="{{ old('no_un') }}">
                         </div>
                     </div>
-                    <div class="col-md-12 required">
+                    <div class="col-md-12">
                         <div class="form-group">
                             <label for="kelas">Nomer SKHUN</label>
                             <input type="text" id="no_skhun" name="no_skhun" class="form-control @error('no_skhun') is-invalid @enderror" value="{{ old('no_skhun') }}">
                         </div>
                     </div>
-                    <div class="col-md-12 required">
+                    <div class="col-md-12">
                         <div class="form-group">
                             <label for="kelas">Nomer Ijasah</label>
                             <input type="text" id="no_ijasah" name="no_ijasah" class="form-control @error('no_ijasah') is-invalid @enderror" value="{{ old('no_ijasah') }}">

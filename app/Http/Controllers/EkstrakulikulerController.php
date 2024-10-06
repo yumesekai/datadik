@@ -121,6 +121,7 @@ class EkstrakulikulerController extends Controller
                     'pilihan_1' => $request->pilihan_1,
                     'pilihan_2' => $request->pilihan_2,
                     'pilihan_3' => $request->pilihan_3,
+		    'no_hp' => $request->no_hp,
                 ];
                 $ekstra->update($ekstra_data);
         
@@ -188,21 +189,21 @@ class EkstrakulikulerController extends Controller
     public function indexGuru()
     {
         $ekstra = Ekstrakulikuler::all();
-        return view('guru.Ekstrakulikuler.index', compact('ekstra'));
+        return view('guru.ekstrakulikuler.index', compact('ekstra'));
     }
 
     //Bagian Siswa Side
     public function indexSiswa()
     {
         $ekstra = Ekstrakulikuler::all();
-        return view('siswa.Ekstrakulikuler.index', compact('ekstra'));
+        return view('siswa.ekstrakulikuler.index', compact('ekstra'));
     }
 
     public function editSiswa()
     {
         $ekstra = Ekstrakulikuler::where('user_id', Auth::user()->id)->first();
         $DataEkstra = DataEkstrakulikuler::OrderBy('nama_ekstra')->get();
-        return view('siswa.Ekstrakulikuler.edit', compact('ekstra', 'DataEkstra'));
+        return view('siswa.ekstrakulikuler.edit', compact('ekstra', 'DataEkstra'));
     }
 
     public function updateSiswa(Request $request)
@@ -214,6 +215,7 @@ class EkstrakulikulerController extends Controller
             $this->validate($request, [
                 'pilihan_1' => 'required',
                 'pilihan_2' => 'required',
+		'no_hp' => 'required',
             ]);
 
             if ($request->pilihan_2 == $request->pilihan_1 || $request->pilihan_3 == $request->pilihan_1) {
@@ -223,6 +225,7 @@ class EkstrakulikulerController extends Controller
                     $ekstra_data = [
                         'pilihan_2' => $request->pilihan_2,
                         'pilihan_3' => $request->pilihan_3,
+			'no_hp' => $request->no_hp,
                     ];
                     $ekstra->update($ekstra_data);
             
@@ -233,6 +236,7 @@ class EkstrakulikulerController extends Controller
                 $ekstra_data = [
                     'pilihan_2' => $request->pilihan_2,
                     'pilihan_3' => $request->pilihan_3,
+		    'no_hp' => $request->no_hp,
                 ];
                 $ekstra->update($ekstra_data);
         
@@ -241,6 +245,7 @@ class EkstrakulikulerController extends Controller
         }elseif (Auth::user()->kelas->angkatan == 'XI') {
             $this->validate($request, [
                 'pilihan_1' => 'required',
+		'no_hp' => 'required',
             ]);
         }else {
             $this->validate($request, [
@@ -256,6 +261,7 @@ class EkstrakulikulerController extends Controller
                     'pilihan_1' => $request->pilihan_1,
                     'pilihan_2' => $request->pilihan_2,
                     'pilihan_3' => $request->pilihan_3,
+		    'no_hp' => $request->no_hp,
                 ];
                 $ekstra->update($ekstra_data);
         
@@ -267,6 +273,7 @@ class EkstrakulikulerController extends Controller
                 'pilihan_1' => $request->pilihan_1,
                 'pilihan_2' => $request->pilihan_2,
                 'pilihan_3' => $request->pilihan_3,
+		'no_hp' => $request->no_hp,
             ];
             $ekstra->update($ekstra_data);
     

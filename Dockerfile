@@ -1,4 +1,4 @@
-FROM PHP:7.2-fpm
+FROM php:7.2-fpm
 
 COPY composer.* /var/www/datadik/
 
@@ -38,3 +38,4 @@ USER www
 EXPOSE 9000
 
 CMD [ "php-fpm" ]
+

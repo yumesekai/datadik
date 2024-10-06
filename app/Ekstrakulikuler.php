@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Ekstrakulikuler extends Model
 {
     protected $fillable = [
-        'user_id', 'kelas_id', 'pilihan_1', 'pilihan_2', 'pilihan_3'
+        'user_id', 'kelas_id', 'pilihan_1', 'pilihan_2', 'pilihan_3', 'no_hp', 'updated_at', 'created_at'
     ];
 
     public function DataEkstrakulikuler()

@@ -69,6 +69,8 @@
 @endsection
 @section('script')
 <script type="text/javascript">
+    $("#PembinaEkskul").addClass("active");
+    $("#liPembinaEkskul").addClass("menu-open");
     $("#Ekstrakulikuler").addClass("active");
 </script>
 @endsection

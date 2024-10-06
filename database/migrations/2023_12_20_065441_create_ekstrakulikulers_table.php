@@ -20,6 +20,7 @@ class CreateEkstrakulikulersTable extends Migration
             $table->string('pilihan_1')->nullable();
             $table->string('pilihan_2')->nullable();
             $table->string('pilihan_3')->nullable();
+	        $table->string('no_hp')->nullable();
             $table->timestamps();
         });
     }

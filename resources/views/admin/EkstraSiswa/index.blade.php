@@ -26,6 +26,7 @@
                         <th>Piliham 1</th>
                         <th>pilihan 2</th>
                         <th>pilihan 3</th>
+			<th>No.HP</th>
                         @if(Auth::user()->role == 'Admin' )
                         <th>Aksi</th>
                         @endif
@@ -40,14 +41,15 @@
                         <td>{{ $data->pilihan_1 }}</td>
                         <td>{{ $data->pilihan_2 }}</td>
                         <td>{{ $data->pilihan_3 }}</td>
+			<td>{{ $data->no_hp }}</td>
                         @if(Auth::user()->role == 'Admin' )
                         <td>
                             
                             <form action="{{ route('ekstrakulikuler.destroy', $data->id) }}" method="post">
                                 @csrf
                                 @method('delete')
-                                <a href="{{ route('ekstrakulikuler.edit', Crypt::encrypt($data->id)) }}" class="btn btn-success btn-sm mt-2"><i class="nav-icon fas fa-edit"></i> &nbsp; Edit</a>
-                                <button onclick="return confirm('Apakah Anda Yakin Menghapus Permanen Data?');" class="btn btn-danger btn-sm mt-2"><i class="nav-icon fas fa-trash-alt"></i> &nbsp; Hapus</button>
+                                <a href="{{ route('ekstrakulikuler.edit', Crypt::encrypt($data->id)) }}" class="btn btn-block btn-success btn-sm mt-2"><i class="nav-icon fas fa-edit"></i> &nbsp; Edit</a>
+                                <button onclick="return confirm('Apakah Anda Yakin Menghapus Permanen Data?');" class="btn btn-block btn-danger btn-sm mt-2"><i class="nav-icon fas fa-trash-alt"></i> &nbsp; Hapus</button>
                             </form>
                             
                         </td>

@@ -13,6 +13,7 @@ use App\Orangtua;
 use App\Pribadi;
 use App\Priodik;
 use App\Smp;
+use App\Ekstrakulikuler;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
@@ -64,13 +65,16 @@ class HomeController extends Controller
     {
         $user = Auth::user()->kelas->id;
         $totalUser = Orangtua::all()->where('kelas_id', $user)->count();
-        $totalPribadi = Pribadi::all()->where('kelas_id', $user)->count();
-        $totalOrangtua = Orangtua::all()->where('kelas_id', $user)->count();
+        $dataOrangtua = Orangtua::all()->where('kelas_id', $user);
+        $dataPribadi = Pribadi::all()->where('kelas_id', $user);
+	$totalPribadi = $dataPribadi->where('status', 'Data Sudah Benar')->count();
+        $totalOrangtua = $dataOrangtua->where('status', 'Data Sudah Benar')->count();
         $totalSMP = Smp::all()->where('kelas_id', $user)->count();
         $totalPriodik = Priodik::all()->where('kelas_id', $user)->count();
-        
-        
-        return view('guru.index', compact('totalPriodik', 'totalSMP', 'totalOrangtua', 'totalPribadi', 'totalUser'));
+        $pil1 = Ekstrakulikuler::where('kelas_id', $user)->count();
+        $pil2 = Ekstrakulikuler::where('kelas_id', $user)->count();
+        $pil3 = Ekstrakulikuler::where('kelas_id', $user)->count();
+        return view('guru.index', compact('totalPriodik', 'totalSMP', 'totalOrangtua', 'totalPribadi', 'totalUser', 'pil1', 'pil2', 'pil3'));
     }
 
     public function admin()

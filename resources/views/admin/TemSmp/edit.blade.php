@@ -2,7 +2,7 @@
 @section('heading', 'Detail Pengajuan Data SMP')
 @section('page')
 <li class="breadcrumb-item active"><a href="{{ route('TemSmp.index') }}">Data SMP</a></li>
-<li class="breadcrumb-item active">Edit Data SMP</li>
+<li class="breadcrumb-item active">Detail Pengajuan Data SMP</li>
 @endsection
 @section('content')
 <div class="col-md-12">
@@ -10,8 +10,8 @@
     <div class="card card-primary">
         <div class="card-header">
             <div class="d-grid gap-2 d-md-flex justify-content-between">
-                <h3 class="card-title">Detail Pengajuan Data SMP</h3>
-                <a href="{{ asset($tem_smp->user->berkas_ijasah) }}" class="btn btn-info" target="_blank" rel="noopener noreferrer"><i class="nav-icon fas fa-image"></i>&nbsp; Berkas Ijasah</a>
+                <h3 class="card-title">Data SMP <b> {{ $tem_smp->user->name }} </b></h3>
+                <a href="{{ asset($tem_smp->user->berkas_ijasah) }}" class="btn btn-warning" target="_blank" rel="noopener noreferrer"><i class="nav-icon fas fa-image"></i>&nbsp; Berkas Ijasah</a>
             </div>
         </div>
         <!-- /.card-header -->
@@ -38,12 +38,12 @@
                             <input type="text" id="no_un" name="no_un" value="{{ $tem_smp->no_un }}" class="form-control @error('kelas') is-invalid @enderror">
                         </div>
 
-                        <div class="form-group required">
+                        <div class="form-group">
                             <label id="no_skhun_cek" class="">Nomer SKHUN</label>
                             <input type="text" id="no_skhun" name="no_skhun" value="{{ $tem_smp->no_skhun }}" class="form-control @error('no_skhun') is-invalid @enderror">
                         </div>
 
-                        <div class="form-group required">
+                        <div class="form-group">
                             <label id="no_ijasah_cek" class="">Nomer Ijasah</label>
                             <input type="text" id="no_ijasah" name="no_ijasah" value="{{ $tem_smp->no_ijasah }}" class="form-control @error('no_ijasah') is-invalid @enderror">
                         </div>
